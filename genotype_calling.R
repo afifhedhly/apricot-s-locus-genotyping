@@ -1,10 +1,16 @@
 # Genotype calling based on coverage breadth
-# Lora J. et al. (2025)
+# Hedhly et al. (2025)
 # Input: bedtools coverage output (.tsv)
 # Output: genotype table (CSV)
-# Define directories
+
+# Define directories
 data_dir <- "path/to/coverage/files"
-rDir <- "path/to/output"# Get a list of all tsv files generated with “bedtools coverage” command (one per accession),coverage_files <- list.files(path = data_dir, pattern = "_F0x4q20eNM3_BedT_coverage_hist\\.tsv$")genotypes_table = data.frame()
+rDir <- "path/to/output"
+
+# Get a list of all tsv files generated with “bedtools coverage” command (one per accession),
+coverage_files <- list.files(path = data_dir, pattern = "_F0x4q20eNM3_BedT_coverage_hist\\.tsv$")
+
+genotypes_table = data.frame()
 
 for(value in coverage_files) {
 
