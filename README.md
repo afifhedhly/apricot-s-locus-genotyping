@@ -26,7 +26,7 @@ The pipeline consists of the following steps:
 
 ## Example pipeline
 
-1. K-mer filtering
+### 1. K-mer filtering
 
 ```bash
 python kmerRefFilter.py -P 12 -r S-allele_database.fasta \
