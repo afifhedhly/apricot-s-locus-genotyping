@@ -26,18 +26,18 @@ The pipeline consists of the following steps:
 
 ## Example pipeline
 
-### 1. K-mer filtering
+1. K-mer filtering
 
 ```bash
 python kmerRefFilter.py -P 12 -r S-allele_database.fasta \
 -1 accession_id_1FWD.fastq.gz -2 accession_id_2REV.fastq.gz \
 -ugzip -mem 0 -o outdir/
 
-### 2. K-mer filtering
+2. Trimming
 
 java -jar trimmomatic-0.39.jar PE -threads 12 -phred33 ...
 
-### 3. MApping
+3. MApping
 
 bowtie2 --end-to-end --very-sensitive --maxins 550 --no-unal \
 -x index/_Parm_GenmV42 \
@@ -45,11 +45,11 @@ bowtie2 --end-to-end --very-sensitive --maxins 550 --no-unal \
 -2 accession_id.reverse.trimmed.fastq \
 --threads 12
 
-### 3. Coverage
+4. Coverage
 
 bedtools coverage -a ref_genome.bed -b aligned.bam > coverage.tsv
 
-### 3. Coverage
+5. Coverage
 
 See script: genotype_calling.R
 
