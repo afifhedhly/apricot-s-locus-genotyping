@@ -2,7 +2,7 @@
 
 This repository contains the pipeline used for genotyping S-RNase and SFB alleles from whole-genome sequencing data, as described in:
 
-Lora et al. (2025) – A comprehensive next-generation sequencing approach for S-locus genotyping in apricot
+Hedhly et al. (2025) – A comprehensive next-generation sequencing approach for S-locus genotyping in apricot
 
 ## Overview
 
@@ -47,7 +47,7 @@ bowtie2 --end-to-end --very-sensitive --maxins 550 --no-unal \
 -x index/_Parm_GenmV42 \
 -1 accession_id.forward.trimmed.fastq \
 -2 accession_id.reverse.trimmed.fastq \
---threads 12 | samtools view -b -F 0x4 -q 20 -e '[NM]<=2' - | samtools sort -o output_dir/accession_id.sort.bam
+--threads N | samtools view -b -F 0x4 -q 20 -e '[NM]<=2' - | samtools sort -o output_dir/accession_id.sort.bam
 ```
 
 ### 4. Coverage
@@ -66,3 +66,4 @@ See script: `genotype_calling.R`
 - A minimum breadth threshold of 50% was used for allele calling  
 - Mapping parameters were optimized to minimize cross-mapping between closely related alleles  
 - The pipeline can flag potential novel alleles through incomplete or ambiguous mapping patterns
+- N indicates the number of CPU threads and should be adjusted according to the user’s system
