@@ -2,7 +2,7 @@
 
 This repository contains the pipeline used for genotyping S-RNase and SFB alleles from whole-genome sequencing data, as described in:
 
-Hedhly et al. (2025) – [title of your manuscript]
+Lora et al. (2025) – A comprehensive next-generation sequencing approach for S-locus genotyping in apricot
 
 ## Overview
 
