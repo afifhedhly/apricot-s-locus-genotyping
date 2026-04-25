@@ -1,4 +1,5 @@
 # Genotype calling based on coverage breadth
+# Hedhly A. et al. (2025)
 # Input: bedtools coverage output (.tsv)
 # Output: genotype table (CSV)
 #
